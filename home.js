@@ -1,5 +1,5 @@
-const emails = ["test@gmail.com", "admin@gmail.com", "havindu@gmail.com"];
-    const passwords = ["1234", "admin123", "havindu@123"];
+const emails = ["havindu2005@gmail.com", "admin@gmail.com", "havindu@gmail.com"];
+    const passwords = ["havindu2005dulaj", "admin123", "havindu@123"];
 
     document.getElementById("loginForm").addEventListener("submit", function(event) {
       event.preventDefault(); 
@@ -20,6 +20,9 @@ const emails = ["test@gmail.com", "admin@gmail.com", "havindu@gmail.com"];
       if (isMatch) {
         messageBox.style.color = "limegreen";
         messageBox.textContent = "✅ Login Successful!";
+        setTimeout(() => {
+            window.location.href = "main.html"; 
+          }, 2000);
       } else {
         messageBox.style.color = "red";
         messageBox.textContent = "❌ Invalid Email or Password!";
