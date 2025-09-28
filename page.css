@@ -1,64 +1,67 @@
-body {
+ body {
     background: black;
     display: flex;
+    flex-direction: column;  
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
 }
+
 img {
     width: 350px;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+    border: 6px ridge #ccc;
 }
+
 .container {
-    will-change: transform;
     width: 350px;
     height: 200px;
     position: relative;
     transform-style: preserve-3d;
-    transform: perspective(1000px);
     animation: gallery 50s linear infinite;
+    margin-top: 40px; 
     cursor: pointer;
 }
-.container span{
+
+.container span {
     position: absolute;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 45deg)) translateZ(450px);
-    -webkit-box-reflect: below 2.5px linear-gradient(transparent,transparent,rgba(3,3,3,0.2));
+    -webkit-box-reflect: below 2.5px linear-gradient(transparent, transparent, rgba(3,3,3,0.2));
 }
-.container span img{
-    position: absolute;
-    border-radius: 10px;
-    border: 6px ridge #ccc;
-    object-fit: cover;
-}
+
 @keyframes gallery {
-    0%{
+    0% {
         transform: perspective(1000px) rotateY(0deg);
     }
-    100%{
+    100% {
         transform: perspective(1000px) rotateY(360deg);
     }
 }
 
-.home-btn {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #00bfff;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
+
+.glow-button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 250px;  
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-radius: 10px;
+    background: #111;
+    border: 2px solid #00ff00;
     cursor: pointer;
     transition: 0.3s;
-    z-index: 999;
+    box-shadow: 0 0 5px #00ff00,0 0 25px #00ff00,0 0 50px #00ff00,0 0 100px #00ff00;
 }
-.home-btn:hover {
-    background: #009acd;
+
+.glow-button:hover {
+    background: #00ff00;
+    color: #111;
 }
