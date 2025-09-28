@@ -28,4 +28,7 @@ const emails = ["havindu2005@gmail.com", "admin@gmail.com", "havindu@gmail.com"]
         messageBox.textContent = "❌ Invalid Email or Password!";
       }
     });
-    
+
+    function goHome() {
+        window.location.href = "homepage.html";
+      }
